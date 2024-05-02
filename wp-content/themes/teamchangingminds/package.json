@@ -1,0 +1,15 @@
+{
+	"name": "teamchangingminds",
+	"version": "0.1.0",
+	"description": "Team: Changing Minds",
+	"main": "index.js",
+	"scripts": {
+		"watch": "sass -w --no-source-map assets/scss/main.scss assets/css/main.css",
+		"sync": "browser-sync start --proxy https://teamchangingminds.local/ --files 'index.html' 'assets/css/*.css'",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "sass --style=compressed --no-source-map assets/scss/main.scss assets/css/main.min.css & uglifyjs --compress -- assets/js/site.js > assets/js/site.min.js"
+	},
+	"dependencies": {
+		"normalize.css": "^8.0.1"
+	}
+}

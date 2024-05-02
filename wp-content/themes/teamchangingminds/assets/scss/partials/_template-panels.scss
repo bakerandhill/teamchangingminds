@@ -1,0 +1,96 @@
+// Panels Template
+
+.panel {
+	.text, h2, h3 {
+		max-width: 680px;
+	}
+	.wp-block-group__inner-container {
+		@include wrapper();
+		padding-top: $spacing;
+		padding-bottom: $spacing;
+		@media (min-width: $screen-lg) {
+			padding-top: $spacing-xl;
+			padding-bottom: $spacing-xl;
+		}
+	}
+	&.challenge {
+		margin-top: -120px;
+		background-color: $gray-light;
+		position: relative;
+		z-index: 90;
+		padding-bottom: $spacing;
+		overflow: hidden;
+		.wp-block-media-text__media, .wp-block-media-text__content {
+			z-index: 5;
+		}
+		.wp-block-media-text__media img {
+			max-width: 600px;
+		}
+		// heart line
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -100px;
+			right: 0;
+			z-index: 2;
+			background-image: url(../images/heart.svg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 870px;
+			height: 340px;
+		}
+		@media (min-width: $screen-lg) {
+			//padding-bottom: $spacing-xl;
+			margin-top: -60px;
+			clip-path: polygon( 0% -3.111%,100.232% -2.545%,100.244% 99.67%,100.244% 99.67%,95.294% 98.17%,90.338% 96.829%,85.374% 95.645%,80.404% 94.619%,75.426% 93.751%,70.44% 93.04%,65.448% 92.488%,60.448% 92.093%,55.441% 91.857%,50.426% 91.778%,50.426% 91.778%,45.406% 91.836%,40.381% 92.009%,35.352% 92.299%,30.318% 92.704%,25.279% 93.225%,20.236% 93.861%,15.188% 94.614%,10.135% 95.482%,5.078% 96.465%,0.016% 97.565%,0% -3.111% );
+			// heart line
+			&:before {
+				bottom: -40px;
+			}
+			.wp-block-media-text__media {
+				margin-bottom: -10px;
+			}
+			.wp-block-media-text__media img {
+				max-width: 100%;
+			}
+		}
+		@media (min-width: $screen-xl) {
+			.wp-block-media-text__media {
+				margin-bottom: -30px;
+			}
+		}
+	}
+	&.sponsors {
+		position: relative;
+		z-index: 80;
+		background-color: $blue;
+		color: $blue-bright;
+		h1, h2, h3, h4, h5, h6 {
+			color: $blue-bright;
+		}
+		.wp-block-image {
+			margin: $spacing-medium;
+		}
+		.logo-futures {
+			max-width: 250px;
+		}
+		.logo-bbbsa {
+			max-width: 260px;
+		}
+		.logo-ncmw {
+			max-width: 150px;
+		}
+		.logo-harrys {
+			max-width: 320px;
+		}
+		@media (min-width: $screen-lg) {
+			margin-top: -70px;
+		}
+		@media (min-width: $screen-xl) {
+			.wp-block-image {
+				margin: $spacing-xl;
+			}
+		}
+	}
+}

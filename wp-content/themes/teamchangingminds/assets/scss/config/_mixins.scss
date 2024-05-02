@@ -1,0 +1,133 @@
+// Mixins
+// --------------------------------------------------
+
+@use "variables";
+
+// Antialiased
+@mixin antialiased() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+}
+
+// Text Shadow
+@mixin text-shadow($shadow...) {
+	text-shadow: $shadow;	
+}
+
+// Shadow
+@mixin box-shadow($shadow...) {
+	-webkit-box-shadow: $shadow;
+  	-moz-box-shadow:    $shadow;
+	box-shadow:         $shadow;
+}
+
+// Circle
+@mixin circle ($radius) {
+     height: $radius;
+     width: $radius;
+     border-radius: $radius;
+     -moz-border-radius: $radius;
+     -webkit-border-radius: $radius;
+	 outline: none;
+}
+
+//Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Absolute Centering
+@mixin absolutecenter($axis: "both"){
+	position:absolute;
+	@if $axis == "y"{
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if $axis == "x"{
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if $axis == "both"{
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+}
+
+// REM Calculation
+@function remCalc($size) {
+	$remSize: calc($size / $font-size-base);
+	@return #{$remSize}rem;
+}
+
+// Wrapper
+@mixin wrapper() {
+	width: 100%;
+	max-width: $screen-xl;
+	padding: 0 $spacing-medium;
+	margin: 0 auto;
+	@media (min-width: $screen-lg) {
+		padding: 0;
+	}
+}
+
+// Row
+@mixin row() {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+// Column
+@mixin column() {
+	position: relative;
+	width: 100%;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	padding: $spacing-small 0;
+	@media (min-width: $screen-lg) {
+		-ms-flex-preferred-size: 0;
+		flex-basis: 0;
+		max-width: 100%;
+		padding: $spacing $spacing-medium;
+	}
+}
+
+// Column Half
+@mixin column-half() {
+	position: relative;
+	width: 100%;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	padding: $spacing-small 0;
+	@media (min-width: $screen-lg) {
+		max-width: 50%;
+		flex-basis: 50%;
+		padding: $spacing $spacing-medium;
+	}
+}
+
+// Column Third
+@mixin column-third() {
+	position: relative;
+	width: 100%;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	padding: $spacing-small 0;
+	@media (min-width: $screen-lg) {
+		max-width: 33%;
+		flex-basis: 33%;
+		padding: $spacing $spacing-medium;
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "name": "acf/resource",
+    "title": "T:CM Resource",
+    "description": "A block to show a single resource.",
+    "style": [ "file:./resource.css" ],
+    "category": "text",
+    "icon": "admin-links",
+    "keywords": ["resource"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "resource.php"
+    }
+}

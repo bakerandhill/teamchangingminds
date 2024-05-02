@@ -1,0 +1,53 @@
+// Variables
+// --------------------------------------------------
+
+$white: #fff;
+$black: #000;
+$gray-light: #F3F3F3;
+$gray-medium: #E0E0E0;
+$blue: #064F80;
+$blue-dark: #003050;
+$blue-light: #1069A5;
+$blue-medium: #7FD3EE;
+$blue-bright: #52D5FF;
+$orange: #EA5E29;
+$orange-light: #FFEFE9;
+$teal: #005753;
+$teal-light: #00847E;
+$teal-bright: #61FFF8;
+$green: #7B9C07;
+$green-bright: #B0D236;
+
+$primary: $blue;
+$secondary: $blue-dark;
+
+// ---
+$link-color: $primary;
+$link-hover-color: $blue-light;
+$text-color: $blue-dark;
+$header-color: $blue-dark;
+$header-color-hover: $blue;
+
+// ---
+$font-primary: 'Gotham', sans-serif;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$font-weight-bold: 700;
+$font-size-text: remCalc($font-size-base);
+$font-size-text-sm: remCalc(14px);
+$font-size-text-lg: remCalc(18px);
+
+$border-radius-base: 20px;
+
+// ---
+$spacing: 1.5rem;
+$spacing-small: 1rem;
+$spacing-medium: 2rem;
+$spacing-large: 3rem;
+$spacing-xl: 4rem;
+
+// ---
+$screen-xl: 1280px;
+$screen-lg: 980px;
+$screen-md: 768px;
+$screen-sm: 460px;

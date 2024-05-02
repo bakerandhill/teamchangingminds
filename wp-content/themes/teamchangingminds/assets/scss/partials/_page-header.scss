@@ -1,0 +1,151 @@
+// Page Header
+
+.page-header {
+	background-color: $blue;
+	padding-top: 80px;
+	overflow: hidden;
+	clip-path: polygon( -0.139% -0.222%,100.093% 0.344%,100.105% 91.447%,100.105% 91.447%,95.156% 92.903%,90.199% 94.206%,85.236% 95.356%,80.265% 96.352%,75.287% 97.195%,70.301% 97.885%,65.309% 98.421%,60.309% 98.805%,55.302% 99.034%,50.287% 99.111%,50.287% 99.111%,45.267% 99.058%,40.242% 98.898%,35.213% 98.632%,30.179% 98.259%,25.14% 97.78%,20.097% 97.195%,15.049% 96.502%,9.996% 95.704%,4.939% 94.799%,-0.123% 93.787%,-0.139% -0.222% );
+	position: relative;
+	z-index: 100;
+	// circle line pattern
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -150px;
+		right: -150px;
+		z-index: 2;
+		background-image: url(../images/lines.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 300px;
+		height: 300px;
+	}
+	// dark blue swoosh
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+		background-image: url(../images/blue-dark-bg-curve.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 480px;
+		height: 100px;
+	}
+	// columns
+	.text, .image {
+		z-index: 5;
+		padding: 0;
+	}
+	.image img {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.text {
+		color: $blue-bright;
+		h1 {
+			color: $blue-bright;
+		}
+	}
+	.logo {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+	// adjust for homepage
+	.home & {
+		.text {
+			text-align: center;
+		}
+		p.large {
+			margin-bottom: 0;
+		}
+		.btn {
+			margin-top: 0;
+		}
+	}
+	@media (min-width: $screen-sm) {
+		// dark blue swoosh
+		&:after {
+			width: 768px;
+			height: 160px;
+		}
+	}
+	@media (min-width: $screen-md) {
+		// circle line pattern
+		&:before {
+			top: -200px;
+			right: -200px;
+			width: 500px;
+			height: 500px;
+		}
+		// dark blue swoosh
+		&:after {
+			bottom: -40px;
+			width: 1440px;
+			height: 300px;
+		}
+	}
+	@media (min-width: $screen-lg) {
+		padding-top: 140px;
+		.text {
+			padding-left: $spacing-large;
+			padding-right: $spacing-small;
+			padding-bottom: $spacing-medium;
+		}
+		.image {
+			margin-top: -50px;
+			align-self: flex-end;
+		}
+		.image img {
+			max-width: 100%;
+		}
+		// circle line pattern
+		&:before {
+			top: -350px;
+			right: -50px;
+			width: 800px;
+			height: 800px;
+		}
+		// dark blue swoosh
+		&:after {
+			bottom: -90px;
+		}
+		// adjust for homepage
+		.home & {
+			padding-top: 100px;
+			.text {
+				text-align: left;
+			}
+		}
+	}
+	@media (min-width: 1080px) {
+		.image {
+			max-width: 58%;
+			flex-basis: 58%;
+			margin-top: -100px;
+		}
+		// adjust for homepage
+		.home & {
+			.wrapper {
+				max-width: 1440px;
+			}
+			.image {
+				max-width: 55%;
+				flex-basis: 55%;
+			}
+			.text {
+				padding-right: 0;
+			}
+		}
+	}
+	@media (min-width: 1440px) {
+		// dark blue swoosh
+		&:after {
+			width: 100%;
+			height: 340px;
+		}
+	}
+}
