@@ -1,7 +1,5 @@
 <?php
-/**
- * The default page template.
- */
+/* The default page template. */
 
 get_header();
 

@@ -1,13 +1,13 @@
 <?php
-/* Template Name: Text Heavy */
+/** The single content template. */
 
 get_header();
 
 // page header
-get_template_part( 'template-parts/page-header-text' );
+get_template_part( 'template-parts/page-header' );
 
 // content wrapper
-echo '<div class="wrapper"><div class="column content-body-text">';
+echo '<div class="wrapper"><div class="column content-body">';
 
 	// Start the Loop.
 	if ( have_posts() ) : while ( have_posts() ) : the_post();

@@ -1,0 +1,57 @@
+// Cards
+
+.card {
+	border-radius: $border-radius-base;
+	@include box-shadow(0 0 11px rgba(0, 0, 0, .08));
+	background-color: $white;
+	padding: 1.75rem;
+	height: 100%;
+	.source {
+		@include row();
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	.logo {
+		width: 35px;
+		height: 35px;
+		border-radius: 100%;
+		margin-right: .75rem;
+	}
+	h3 {
+		margin-top: 0;
+	}
+	p {
+		margin: 0;
+	}
+	@media (min-width: $screen-lg) {
+		padding: 2.5rem;
+	}
+	// -- Resource
+
+	// -- Story
+	&.story {
+		color: $teal-dark;
+		a {
+			color: $teal-dark;
+			&:hover {
+				color: $teal;
+			}
+		}
+		p.card-text {
+			font-size: remCalc(16px);
+			position: relative;
+			i {
+				position: absolute;
+				bottom: -10px;
+				right: 0;
+				font-size: 26px;
+			}
+		}
+		p.label {
+			color: $teal-dark;
+			margin-top: $spacing;
+		}
+	}
+}
+
+

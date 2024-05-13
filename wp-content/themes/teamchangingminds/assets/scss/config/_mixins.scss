@@ -131,3 +131,100 @@
 		padding: $spacing $spacing-medium;
 	}
 }
+
+// Large Panel Headers
+@mixin panel-header() {
+	font-size: remCalc(32px);
+	@media (min-width: $screen-lg) {
+		font-size: remCalc(36px);
+	}
+	@media (min-width: $screen-xl) {
+		font-size: remCalc(42px);
+	}
+}
+
+// Buttons
+@mixin button() {
+	display: inline-block;
+	font-size: remCalc(17px);
+	font-weight: 700;
+	text-align: center;
+	border: 2px solid $blue-bright;
+	padding: $spacing-small 2rem;
+	margin: $spacing 0;
+	border-radius: 30px;
+	min-width: 270px;
+	line-height: 1;
+	@include transition(all .3s);
+}
+
+@mixin button-primary() {
+	background-color: $blue;
+	color: $white !important;
+	&:hover {
+		text-decoration: none;
+		color: $blue-dark !important;
+		background-color: $blue-bright;
+		border-color: $blue-bright;
+		// color: $green-dark !important;
+		// background-color: $green-bright;
+		// border-color: $green-dark;
+	}
+}
+
+@mixin button-secondary() {
+	background-color: $green-bright;
+	border-color: $green-bright;
+	color: $green-dark !important;
+	&:hover {
+		color: $green-bright !important;
+		background-color: $green-dark;
+		border-color: $green-dark;
+	}
+	// .btn-secondary & {
+	// 	background-color: $green;
+	// 	border-color: $green-bright;
+	// 	&:hover {
+	// 		color: $green-dark !important;
+	// 		background-color: $green-bright;
+	// 		border-color: $green-dark;
+	// 	}
+	// }
+}
+
+@mixin button-tertiary() {
+	background-color: $teal-bright;
+	border-color: $teal-bright;
+	color: $teal-dark !important;
+	&:hover {
+		color: $teal-bright !important;
+		background-color: $teal-dark;
+		border-color: $teal-dark;
+	}
+}
+
+@mixin button-footer() {
+	font-size: remCalc(15px);
+	font-weight: 400;
+	text-align: left;
+	background-color: $blue;
+	color: $blue-bright !important;
+	border-color: $blue-dark;
+	padding: 1.25rem 70px 1.25rem 1.25rem;
+	position: relative;
+	margin: 0;
+	i {
+		font-size: 25px;
+		position: absolute;
+		top: 15px;
+		right: 20px;
+	}
+	&:hover {
+		color: $blue-dark !important;
+		background-color: $blue-bright;
+		border-color: $blue-bright;
+		// color: $green-dark !important;
+		// background-color: $green-bright;
+		// border-color: $green-dark;
+	}
+}

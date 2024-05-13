@@ -8,7 +8,7 @@
 	position: relative;
 	z-index: 100;
 	// circle line pattern
-	&:before {
+	&::before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -22,7 +22,7 @@
 		height: 300px;
 	}
 	// dark blue swoosh
-	&:after {
+	&.has-feature::after {
 		content: '';
 		display: block;
 		position: absolute;
@@ -66,23 +66,38 @@
 			margin-top: 0;
 		}
 	}
+	// adjust for text page
+	&.text {
+		.text {
+			text-align: center;
+			padding-bottom: $spacing-small;
+			h1 {
+				max-width: $screen-lg;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		&::after, &::before {
+			display: none;
+		}
+	}
 	@media (min-width: $screen-sm) {
 		// dark blue swoosh
-		&:after {
+		&.has-feature::after {
 			width: 768px;
 			height: 160px;
 		}
 	}
 	@media (min-width: $screen-md) {
 		// circle line pattern
-		&:before {
+		&::before {
 			top: -200px;
-			right: -200px;
+			right: -250px;
 			width: 500px;
 			height: 500px;
 		}
 		// dark blue swoosh
-		&:after {
+		&.has-feature::after {
 			bottom: -40px;
 			width: 1440px;
 			height: 300px;
@@ -90,7 +105,7 @@
 	}
 	@media (min-width: $screen-lg) {
 		padding-top: 140px;
-		.text {
+		.text, &.text .text {
 			padding-left: $spacing-large;
 			padding-right: $spacing-small;
 			padding-bottom: $spacing-medium;
@@ -103,14 +118,14 @@
 			max-width: 100%;
 		}
 		// circle line pattern
-		&:before {
+		&::before {
 			top: -350px;
-			right: -50px;
+			right: -150px;
 			width: 800px;
 			height: 800px;
 		}
 		// dark blue swoosh
-		&:after {
+		&.has-feature::after {
 			bottom: -90px;
 		}
 		// adjust for homepage
@@ -123,8 +138,8 @@
 	}
 	@media (min-width: 1080px) {
 		.image {
-			max-width: 58%;
-			flex-basis: 58%;
+			max-width: 50%;
+			flex-basis: 50%;
 			margin-top: -100px;
 		}
 		// adjust for homepage
@@ -143,7 +158,7 @@
 	}
 	@media (min-width: 1440px) {
 		// dark blue swoosh
-		&:after {
+		&.has-feature::after {
 			width: 100%;
 			height: 340px;
 		}

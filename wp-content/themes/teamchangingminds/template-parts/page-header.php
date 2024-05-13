@@ -1,18 +1,18 @@
 <?php
-/**
- * The template part for displaying the Page header
- */
+/* The template part for displaying the Page header. */
+
+$logo = get_field( 'header_logo' );
+$subhead = get_field( 'header_sub' );
+$button = get_field( 'header_button' );
+$feature = get_field( 'header_feature' );
+
 ?>
 
-<header class="page-header">
+<header class="page-header <?php if ( $feature ) { echo ' has-feature'; } ?>">
 	<div class="wrapper">
 		<div class="row">
 			<div class="column text">
 			<?php
-			$logo = get_field( 'header_logo' );
-			$subhead = get_field( 'header_sub' );
-			$button = get_field( 'header_button' );
-			$feature = get_field( 'header_feature' );
 
 			// logo
 			if ( $logo ) {

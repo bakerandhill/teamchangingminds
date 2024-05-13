@@ -1,7 +1,5 @@
 <?php
-/*
-The theme header file.
-*/
+/* The theme header file. */
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Text Heavy */
+/* The template for a single Story CPT. */
 
 get_header();
 

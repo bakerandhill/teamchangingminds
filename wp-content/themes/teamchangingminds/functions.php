@@ -72,5 +72,11 @@ function teamchangingminds_register_blocks() {
 	// support block
 	register_block_type( __DIR__ . '/blocks/resource' );
 
+	// stories block
+	register_block_type( __DIR__ . '/blocks/stories' );
+
 }
 add_action( 'init', 'teamchangingminds_register_blocks' );
+
+// Create Custom Post Types
+require_once('inc/custom-post-types.php');

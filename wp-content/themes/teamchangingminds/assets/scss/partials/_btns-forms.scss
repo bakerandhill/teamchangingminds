@@ -3,28 +3,52 @@
 
 // Buttons
 .btn, .wp-block-button__link {
-	display: inline-block;
-	font-size: remCalc(17px);
-	font-weight: 700;
-	text-align: center;
-	background-color: $blue;
-	color: $white !important;
-	border: 2px solid $blue-bright;
-	padding: $spacing-small 2rem;
-	margin: $spacing 0;
-	border-radius: 30px;
-	min-width: 270px;
-	&:hover {
-		background-color: $blue-dark;
-		text-decoration: none;
-		border-color: $white;
-	}
+	@include button();
+	@include button-primary();
 	.btn-secondary & {
-		background-color: $green;
-		border-color: $green-bright;
-		&:hover {
-			background-color: $blue-dark;
-			border-color: $white;
-		}
+		@include button-secondary();
 	}
+	.btn-tertiary & {
+		@include button-tertiary();
+	}
+	.btn-footer & {
+		@include button-footer();
+	}
+}
+
+// Forms - Gravity forms plugin
+.gform_wrapper.gravity-theme {
+	.gfield_label {
+		font-size: remCalc(12px) !important;
+		text-transform: uppercase;
+		color: $primary;
+	}
+	.gfield {
+		margin-bottom: .75rem;
+	}
+}
+.gform_wrapper.gravity-theme .description, .gform_wrapper.gravity-theme .gfield_description, .gform_wrapper.gravity-theme .gsection_description, .gform_wrapper.gravity-theme .instruction {
+	font-size: remCalc(12px) !important;
+}
+.gform_wrapper.gravity-theme .gfield_checkbox label, .gform_wrapper.gravity-theme .gfield_radio label {
+	font-size: remCalc(12px) !important;
+}
+.gform_wrapper.gravity-theme input[type=color], .gform_wrapper.gravity-theme input[type=date], .gform_wrapper.gravity-theme input[type=datetime-local], .gform_wrapper.gravity-theme input[type=datetime], .gform_wrapper.gravity-theme input[type=email], .gform_wrapper.gravity-theme input[type=month], .gform_wrapper.gravity-theme input[type=number], .gform_wrapper.gravity-theme input[type=password], .gform_wrapper.gravity-theme input[type=search], .gform_wrapper.gravity-theme input[type=tel], .gform_wrapper.gravity-theme input[type=text], .gform_wrapper.gravity-theme input[type=time], .gform_wrapper.gravity-theme input[type=url], .gform_wrapper.gravity-theme input[type=week], .gform_wrapper.gravity-theme select, .gform_wrapper.gravity-theme textarea {
+	border: 1px solid $gray;
+	border-radius: 32px;
+	padding: 15px !important;
+}
+.gform_wrapper.gravity-theme .gform_footer button, .gform_wrapper.gravity-theme .gform_footer input, .gform_wrapper.gravity-theme .gform_page_footer button, .gform_wrapper.gravity-theme .gform_page_footer input {
+	@include button();
+	@include button-primary();
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.gform_wrapper.gravity-theme .gfield-choice-input {
+	width: 20px;
+	height: 20px;
+}
+.gform_wrapper.gravity-theme .gfield_required {
+	display: none !important;
 }

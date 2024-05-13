@@ -18,7 +18,7 @@
 		color: $blue-bright;
 		text-align: left;
 		&:hover {
-			color: $white;
+			color: $green-bright;
 		}
 		&.open {
 			display: none;
@@ -99,6 +99,7 @@
 			font-size: remCalc(12px);
 			padding: 1.5rem .4rem;
 			&:hover {
+				//color: $green-bright;
 				color: $white;
 			}
 			@media (min-width: $screen-lg) {
@@ -137,6 +138,7 @@
 				line-height: 1.3;
 				color: $blue-bright;
 				&:hover {
+					//color: $green-bright;
 					color: $white;
 				}
 			}

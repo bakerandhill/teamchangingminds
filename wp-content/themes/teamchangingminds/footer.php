@@ -1,7 +1,5 @@
 <?php
-/*
-The theme footer file.
-*/
+/* The theme footer file. */
 ?>
 	</section>
 		</main>

@@ -1,0 +1,13 @@
+{
+    "name": "acf/stories",
+    "title": "T:CM Responder Stories",
+    "description": "A block to show the latest Responder stories.",
+    "style": [ "file:./stories.css" ],
+    "category": "text",
+    "icon": "testimonial",
+    "keywords": ["resource"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "stories.php"
+    }
+} 
