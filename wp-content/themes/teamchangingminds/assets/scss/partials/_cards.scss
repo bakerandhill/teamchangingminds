@@ -6,6 +6,8 @@
 	background-color: $white;
 	padding: 1.75rem;
 	height: 100%;
+	display: block;
+	@include transition(all .3s);
 	.source {
 		@include row();
 		align-items: center;
@@ -26,16 +28,70 @@
 	@media (min-width: $screen-lg) {
 		padding: 2.5rem;
 	}
+	
+	// Small centered card
+	&.card-small {
+		max-width: 736px; // match text column on text heavy template
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	// -- Resource
+	&.resource {
+		&:hover {
+			transform: scale(102%);
+		}
+		&:hover p, &:hover h3 {
+			color: $link-hover-color;
+		}
+	}
+
+	// -- Stat
+	&.stat {
+		text-align: center;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: $blue-dark;
+		.stat-callout {
+			font-size: remCalc(60px);
+			line-height: 1;
+			margin: 0 0 .5rem 0;
+			color: $blue-bright;
+			letter-spacing: -0.04em;
+			//font-weight: $font-weight-bold;
+		}
+		.stat-details {
+			font-size: remCalc(15px);
+			line-height: 1.2;
+			margin: 0;
+			color: $blue-bright;
+		}
+		@media (min-width: $screen-lg) {
+			padding: 2rem 1.5rem;
+			.stat-callout {
+				font-size: remCalc(72px);
+			}
+			.stat-details {
+				font-size: remCalc(16px);
+			}
+		}
+		@media (min-width: $screen-xl) {
+			padding: 2.5rem 2rem;
+			.stat-callout {
+				font-size: remCalc(92px);
+			}
+			.stat-details {
+				font-size: remCalc(20px);
+			}
+		}
+	}
 
 	// -- Story
 	&.story {
 		color: $teal-dark;
-		a {
-			color: $teal-dark;
-			&:hover {
-				color: $teal;
-			}
+		&:hover {
+			transform: scale(102%);
 		}
 		p.card-text {
 			font-size: remCalc(16px);
@@ -45,11 +101,15 @@
 				bottom: -10px;
 				right: 0;
 				font-size: 26px;
+				background-color: $white;
 			}
 		}
 		p.label {
 			color: $teal-dark;
 			margin-top: $spacing;
+		}
+		&:hover p {
+			color: $teal;
 		}
 	}
 }

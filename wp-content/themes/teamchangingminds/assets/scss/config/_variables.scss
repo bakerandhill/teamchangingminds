@@ -41,7 +41,9 @@ $font-size-text: remCalc($font-size-base);
 $font-size-text-sm: remCalc(14px);
 $font-size-text-lg: remCalc(18px);
 
+// ---
 $border-radius-base: 20px;
+$text-max-width: 850px;
 
 // ---
 $spacing: 1.5rem;

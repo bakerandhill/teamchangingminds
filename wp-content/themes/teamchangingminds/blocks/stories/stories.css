@@ -1,0 +1,19 @@
+.wp-block .stories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.wp-block .card.story {
+    width: 120px;
+    display: block;
+}
+.wp-block .card.story p {
+    font-size: 13px;
+    line-height: 1.4;
+}
+.wp-block .card.story p.label {
+    color: #005753;
+}
+.wp-block .card.story a {
+    color: #005753;
+}

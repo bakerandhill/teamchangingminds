@@ -134,28 +134,33 @@
 
 // Large Panel Headers
 @mixin panel-header() {
-	font-size: remCalc(32px);
+	font-size: remCalc(28px);
 	@media (min-width: $screen-lg) {
-		font-size: remCalc(36px);
+		//font-size: remCalc(36px);
 	}
 	@media (min-width: $screen-xl) {
-		font-size: remCalc(42px);
+		font-size: remCalc(38px);
 	}
 }
 
 // Buttons
 @mixin button() {
 	display: inline-block;
-	font-size: remCalc(17px);
+	font-size: remCalc(15px);
 	font-weight: 700;
 	text-align: center;
 	border: 2px solid $blue-bright;
 	padding: $spacing-small 2rem;
-	margin: $spacing 0;
+	margin: $spacing-small auto;
 	border-radius: 30px;
 	min-width: 270px;
 	line-height: 1;
 	@include transition(all .3s);
+	text-decoration: none !important;
+	@media (min-width: $screen-md) {
+		margin: $spacing auto;
+		font-size: remCalc(17px);
+	}
 }
 
 @mixin button-primary() {

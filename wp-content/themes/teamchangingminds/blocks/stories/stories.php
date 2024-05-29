@@ -1,6 +1,12 @@
 <?php
 /* Stories Block template. */
 
+// Create class attribute allowing for custom "className"
+$class_name = '';
+if ( ! empty( $block['className'] ) ) {
+    $class_name .= ' ' . $block['className'];
+}
+
 $args = array(
 	'post_type'			=> 'story',
 	'posts_per_page'	=> 10,
@@ -11,7 +17,7 @@ $args = array(
 $the_query = new WP_Query( $args );
 
 if ( $the_query->have_posts() ) {
-	echo '<div class="row">';
+	echo '<div class="stories row ' . esc_attr( $class_name ) . '">';
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
 		$s_excerpt = get_the_excerpt();
@@ -23,10 +29,10 @@ if ( $the_query->have_posts() ) {
 			$result = substr($s_excerpt, 0, strrpos($s_excerpt, ' '));
 		}
 
-		echo '<div class="column-half"><div class="card story">';
-		echo '<p class="card-text"><a href="' .  get_the_permalink() . '">' . $result . '... <i class="fa-light fa-circle-plus"></i></a></p>';
+		echo '<div class="column-half"><a href="' .  get_the_permalink() . '" class="card story active fade-bottom">';
+		echo '<p class="card-text">' . $result . '... <i class="fa-light fa-circle-plus"></i></p>';
 		echo '<p class="label">' . $funder . '</p>';
-		echo '</div></div>';
+		echo '</a></div>';
 	}
 	echo '</div>';
 }

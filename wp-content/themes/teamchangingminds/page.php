@@ -7,7 +7,7 @@ get_header();
 get_template_part( 'template-parts/page-header' );
 
 // content wrapper
-echo '<div class="wrapper"><div class="column content-body">';
+echo '<div class="wrapper"><div class="column content-body active fade-bottom">';
 
 	// Start the Loop.
 	if ( have_posts() ) : while ( have_posts() ) : the_post();

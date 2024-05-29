@@ -1,0 +1,13 @@
+{
+    "name": "acf/statistic",
+    "title": "T:CM Statistic",
+    "description": "A block to show a single statistic.",
+    "style": [ "file:./statistic.css" ],
+    "category": "text",
+    "icon": "analytics",
+    "keywords": ["statistic"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "statistic.php"
+    }
+}

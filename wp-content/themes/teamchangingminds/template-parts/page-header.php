@@ -11,7 +11,7 @@ $feature = get_field( 'header_feature' );
 <header class="page-header <?php if ( $feature ) { echo ' has-feature'; } ?>">
 	<div class="wrapper">
 		<div class="row">
-			<div class="column text">
+			<div class="column text active fade-left">
 			<?php
 
 			// logo
@@ -36,7 +36,7 @@ $feature = get_field( 'header_feature' );
 
 			// feature image
 			if ( $feature ) {
-				echo '<div class="column image">';
+				echo '<div class="column image active fade-right">';
 				echo wp_get_attachment_image( $feature, 'full', '', array( 'class' => 'feature' ) );
 				echo '</div>';
 			}

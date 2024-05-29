@@ -72,6 +72,9 @@ function teamchangingminds_register_blocks() {
 	// support block
 	register_block_type( __DIR__ . '/blocks/resource' );
 
+	// statistic block
+	register_block_type( __DIR__ . '/blocks/statistic' );
+
 	// stories block
 	register_block_type( __DIR__ . '/blocks/stories' );
 

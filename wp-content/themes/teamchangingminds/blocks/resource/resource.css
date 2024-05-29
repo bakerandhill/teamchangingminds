@@ -1,3 +1,6 @@
+.wp-block a.resource {
+	display: block;
+}
 .wp-block .resource .logo {
 	box-sizing: border-box;
 	width: 35px;

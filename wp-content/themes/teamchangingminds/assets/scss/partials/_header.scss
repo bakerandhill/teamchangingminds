@@ -18,7 +18,8 @@
 		color: $blue-bright;
 		text-align: left;
 		&:hover {
-			color: $green-bright;
+			//color: $green-bright;
+			color: $white;
 		}
 		&.open {
 			display: none;

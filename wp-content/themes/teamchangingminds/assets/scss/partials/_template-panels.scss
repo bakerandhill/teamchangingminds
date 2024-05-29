@@ -2,7 +2,7 @@
 
 .panel {
 	.text, h2, h3 {
-		max-width: 680px;
+		max-width: $text-max-width;
 		margin-left: auto;
 		margin-right: auto
 	}
@@ -17,7 +17,7 @@
 	}
 	&.challenge {
 		margin-top: -120px;
-		background-color: $gray-light;
+		background-color: $green-light;
 		position: relative;
 		z-index: 90;
 		padding-bottom: $spacing;
@@ -26,44 +26,79 @@
 			z-index: 5;
 		}
 		.wp-block-media-text__media img {
-			max-width: 600px;
+			max-width: 400px;
 		}
 		h2 {
 			@include panel-header();
+			color: $green-dark;
+		}
+		p {
+			color: $green-dark;
 		}
 		// heart line
 		&:before {
 			content: '';
 			display: block;
 			position: absolute;
-			bottom: -100px;
-			right: 0;
+			top: 60px;
+			right: -300px;
 			z-index: 2;
-			background-image: url(../images/heart.svg);
+			background-image: url(../images/heart2.svg);
 			background-repeat: no-repeat;
 			background-size: cover;
-			width: 870px;
-			height: 340px;
+			width: 880px;
+			height: 300px;
+		}
+		@media (min-width: $screen-md) {
+			// heart line
+			&:before {
+				top: 90px;
+				right: -100px;
+			}
+			h2 {
+				margin-top: $spacing-large;
+			}
 		}
 		@media (min-width: $screen-lg) {
 			//padding-bottom: $spacing-xl;
-			margin-top: -60px;
+			margin-top: -80px;
 			clip-path: polygon( 0% -3.111%,100.232% -2.545%,100.244% 99.67%,100.244% 99.67%,95.294% 98.17%,90.338% 96.829%,85.374% 95.645%,80.404% 94.619%,75.426% 93.751%,70.44% 93.04%,65.448% 92.488%,60.448% 92.093%,55.441% 91.857%,50.426% 91.778%,50.426% 91.778%,45.406% 91.836%,40.381% 92.009%,35.352% 92.299%,30.318% 92.704%,25.279% 93.225%,20.236% 93.861%,15.188% 94.614%,10.135% 95.482%,5.078% 96.465%,0.016% 97.565%,0% -3.111% );
 			// heart line
 			&:before {
-				bottom: -40px;
+				top: auto;
+				bottom: -60px;
+				right: -250px;
 			}
 			.wp-block-media-text__media {
-				margin-bottom: -10px;
+				margin-bottom: -20px;
 			}
 			.wp-block-media-text__media img {
 				max-width: 100%;
 			}
+			.wp-block-media-text__content {
+				padding-left: 0;
+			}
+			.btn-secondary .wp-block-button__link {
+				margin-top: 0;
+			}
 		}
 		@media (min-width: $screen-xl) {
+			// heart line
+			&:before {
+				bottom: -10px;
+				right: -230px;
+				width: 1080px;
+				height: 368px;
+			}
 			.wp-block-media-text__media {
 				margin-bottom: -30px;
 			}
+			.wp-block-media-text__content {
+				padding: 0 8%;
+			}
+			.btn-secondary .wp-block-button__link {
+				margin-top: 1.5rem;
+			}		
 		}
 	}
 	&.stories {
@@ -71,9 +106,6 @@
 		h2 {
 			@include panel-header();
 			max-width: 800px;
-		}
-		@media (min-width: $screen-lg) {
-			margin-top: -70px;
 		}
 		.wp-block-cover__inner-container {
 			position: relative;
@@ -84,14 +116,22 @@
 			content: '';
 			display: block;
 			position: absolute;
-			bottom: -100px;
-			left: 20%;
+			bottom: -40px;
+			left: 18%;
 			z-index: 2;
-			background-image: url(../images/lightbulb.svg);
+			background-image: url(../images/lightbulb2.svg);
 			background-repeat: no-repeat;
 			background-size: cover;
-			width: 785px;
-			height: 444px;
+			width: 600px;
+			height: 369px;
+		}
+		@media (min-width: $screen-lg) {
+			margin-top: -70px;
+		}
+		@media (min-width: $screen-xl) {
+			margin-top: -100px;
+			padding-top: 3rem;
+
 		}
 	}
 	&.sponsors {
@@ -99,27 +139,136 @@
 		z-index: 80;
 		background-color: $blue;
 		color: $blue-bright;
-		h1, h2, h3, h4, h5, h6 {
+		h1, h2, h3, h4, h5, h6, a {
 			color: $blue-bright;
 		}
+		h3 {
+			margin-top: 4rem;
+			margin-bottom: $spacing-small;
+		}
+		a {
+			text-decoration: none;
+		}
+		a:hover {
+			color: $white;
+		}
+		.wp-block-columns {
+			align-items: flex-end !important;	
+		}
 		.wp-block-image {
-			margin: $spacing-medium;
+			margin: $spacing-small $spacing-medium;
 		}
 		.logo-futures img {
 			max-width: 250px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.logo-bbbsa img {
 			max-width: 260px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.logo-ncmw img {
 			max-width: 150px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		.logo-harrys img {
 			max-width: 320px;
+			margin-top: $spacing;
 		}
 		@media (min-width: $screen-xl) {
 			.wp-block-image {
-				margin: $spacing-xl;
+				margin: $spacing-small $spacing-xl $spacing-small $spacing-xl;
+			}
+		}
+	}
+	&.intro {
+		margin-top: -40px;
+		position: relative;
+		z-index: 20;
+		background-color: $white;
+		padding-bottom: $spacing;
+		clip-path: polygon( 0% -3.111%,100.232% -2.545%,100.244% 99.67%,100.244% 99.67%,95.294% 98.17%,90.338% 96.829%,85.374% 95.645%,80.404% 94.619%,75.426% 93.751%,70.44% 93.04%,65.448% 92.488%,60.448% 92.093%,55.441% 91.857%,50.426% 91.778%,50.426% 91.778%,45.406% 91.836%,40.381% 92.009%,35.352% 92.299%,30.318% 92.704%,25.279% 93.225%,20.236% 93.861%,15.188% 94.614%,10.135% 95.482%,5.078% 96.465%,0.016% 97.565%,0% -3.111% );
+		.wp-block-group__inner-container {
+			padding-top: $spacing-large;
+			padding-bottom: 4rem;
+		}
+		p.large {
+			max-width: $text-max-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@media (min-width: $screen-lg) {
+			padding-left: $spacing-large;
+			padding-right: $spacing-large;
+			.wp-block-group__inner-container {
+				padding-top: 6rem;
+			}
+		}
+	}
+	&.stats {
+		margin-top: -60px;
+		position: relative;
+		overflow: hidden;
+		background-color: $green-light;
+		padding-bottom: 3rem;
+		// h2, h3 {
+		// 	color: $green-dark;
+		// }
+		.wp-block-group__inner-container {
+			position: relative;
+			z-index: 5;
+		}
+		h2 {
+			margin-top: 4rem;
+			margin-bottom: $spacing;
+		}
+		h2:first-of-type {
+			margin-top: 3rem;
+		}
+		h2 + .wp-block-buttons .wp-block-button__link {
+			margin-top: $spacing-small;
+			margin-bottom: 0;
+		}
+		// puzzle line art
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -20px;
+			right: -80px;
+			z-index: 2;
+			background-image: url(../images/puzzle2-green.svg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 880px;
+			height: 360px;
+		}
+		@media (min-width: $screen-lg) {
+			padding-left: $spacing-large;
+			padding-right: $spacing-large;
+			h2 {
+				margin-top: 7rem;
+				margin-bottom: $spacing-medium;
+			}
+			h2 + .wp-block-buttons .wp-block-button__link {
+				margin-top: 0;
+				margin-bottom: $spacing-small;
+			}	
+		}
+		@media (min-width: $screen-xl) {
+			margin-top: -50px;
+			padding-bottom: 4rem;
+			h2 {
+				margin-bottom: $spacing-large;
+			}
+			h2:first-of-type {
+				margin-top: 0;
+			}
+			h2 + .wp-block-buttons .wp-block-button__link {
+				margin-top: 0;
+				margin-bottom: $spacing-small;
 			}
 		}
 	}
